@@ -1,0 +1,19 @@
+package com.dealse.dealsepartner.Interfaces;
+
+import com.dealse.dealsepartner.Entity.CheckStoreMobieNumberExistRequest;
+import com.dealse.dealsepartner.Entity.CheckStoreMobieNumberExistResponse;
+import com.dealse.dealsepartner.Objects.GetAreaAndStoreTypeList;
+
+import retrofit2.Call;
+import retrofit2.http.Body;
+import retrofit2.http.Header;
+import retrofit2.http.Headers;
+import retrofit2.http.POST;
+
+public interface GetAreaAndStoreTypeResponse {
+
+    @Headers("Content-Type:application/json")
+    @POST("api/v1/HomeScreen/GetAreaAndStoreTypeList")
+    Call<GetAreaAndStoreTypeList> getAreaAndStoreTypeList(@Header("Authorization") String authtoken);
+
+}

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cyan_700"
+    android:layout_marginTop="10dp"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:elevation="0dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:contentInsetStartWithNavigation="0dp"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/app_bar_layout"
+                android:orientation="vertical">
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="5dp"
+                    android:paddingLeft="@dimen/spacing_large"
+                    android:paddingRight="@dimen/spacing_large">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="6dp"
+                        app:cardElevation="2dp"
+                        app:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/spacing_xmlarge"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:layout_width="@dimen/spacing_large"
+                                    android:layout_height="0dp" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:text="Redeem Coupon"
+                                    android:textSize="22sp"
+                                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                                    android:textColor="@color/grey_40"
+                                    app:fontFamily="sans-serif-medium" />
+
+                                <ImageButton
+                                    android:layout_width="@dimen/spacing_xmlarge"
+                                    android:layout_height="@dimen/spacing_xmlarge"
+                                    android:background="?attr/selectableItemBackgroundBorderless"
+                                    android:tint="@color/green_400"
+                                     />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/spacing_middle" />
+
+                            <EditText
+                                style="@style/EditText.Flat.Grey"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/spacing_xmlarge"
+                                android:background="@drawable/edit_text_round_bg_white"
+                                android:minHeight="@dimen/spacing_xmlarge"
+                                android:textSize="18sp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:hint="Enter coupon code"/>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/spacing_mlarge" />
+
+
+
+                            <Button
+                                android:id="@+id/btnRegister"
+                                android:layout_width="200dp"
+                                android:layout_height="35dp"
+                                android:background="@color/colorPrimary"
+                                android:text="Check status &amp; Redeem"
+                                android:textAllCaps="false"
+                                android:textSize="16sp"
+                                android:textColor="@color/white"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginLeft="10dp"/>
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="OR"
+                                android:layout_marginTop="10dp"
+                                ></TextView>
+
+
+                            <RelativeLayout
+                                android:id="@+id/scanlayout1"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/scanbg">
+
+                                <RelativeLayout
+                                    android:id="@+id/qriconview"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_centerVertical="true">
+                                    <ImageView
+                                        android:layout_width="45dp"
+                                        android:layout_height="45dp"
+                                        android:layout_centerVertical="true"
+                                        android:layout_centerHorizontal="true"
+                                        android:src="@drawable/qrcode3">
+
+                                    </ImageView>
+                                </RelativeLayout>
+
+                                <TextView
+                                    android:id="@+id/qrtxtq1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Scan Coupon Qr code"
+                                    android:layout_toRightOf="@+id/qriconview"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_alignTop="@+id/qriconview"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/grey_80"
+                                    android:textSize="18sp">
+
+                                </TextView>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Scan for quick redemption"
+                                    android:layout_below="@+id/qrtxtq1"
+                                    android:layout_alignLeft="@+id/qrtxtq1"
+                                    android:layout_alignBottom="@+id/qriconview"></TextView>
+
+                            </RelativeLayout>
+
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/spacing_mlarge" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/spacing_small" />
+
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/spacing_medium"
+                        android:layout_marginTop="@dimen/spacing_medium"
+                        android:gravity="center"
+                        android:text="Last redemptions"
+                        android:textSize="18sp"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                        android:textColor="@color/grey_5"
+                        app:fontFamily="sans-serif-medium" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/toolbar"
+                        android:layout_marginTop="10dp"
+                        android:descendantFocusability="beforeDescendants" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/spacing_large" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

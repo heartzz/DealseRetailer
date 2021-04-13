@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:foreground="?android:attr/selectableItemBackground">
+
+
+    <RelativeLayout
+        android:id="@+id/ordersummerylayout"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/textView3"
+        android:background="@drawable/cardbackground5"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/itemImage1"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            android:visibility="gone"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/itemImage1"
+            android:layout_alignTop="@+id/itemImage1"
+            android:textSize="22sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="12345678901"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/oferidtxt" />
+
+        <TextView
+            android:text="Flat 200 OFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/oferidtxt"
+            android:layout_alignLeft="@+id/oferidtxt"
+            android:layout_marginTop="5dp"
+            android:textSize="20sp"
+            android:id="@+id/offertext" />
+        <TextView
+            android:text="27 Sept - 27 Oct 2019"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/offertext"
+            android:layout_alignLeft="@+id/offertext"
+            android:layout_marginTop="5dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:id="@+id/fromtodates" />
+
+        <ImageView
+            android:id="@+id/editIc"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignBottom="@+id/itemImage1"
+            android:src="@drawable/ic_edit_black_24dp"
+            android:layout_alignParentRight="true"
+            />
+
+        <TextView
+            android:id="@+id/tv_offerStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Active"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:textStyle="bold"
+            android:textColor="@color/green_400"/>
+
+
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>

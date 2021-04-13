@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Dealse Retailer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="step_of">Step %1$d of %2$d</string>
+    <string name="storename1">Tea Post</string>
+
+    <string name="otp1">Verification</string>
+    <string name="otp2">Sit back and relax while we are verifing your mobile number</string>
+    <string name="otp3">(Enter the OTP below manually if we fail to detact automatically)</string>
+    <string name="otp4">(Enter OTP below manually if we fail to detact automatically)</string>
+    <string name="txtotpnotreceived">Did not receive OTP?  Resend Code</string>
+    <string name="pleasewait">Please wait</string>
+
+    <string name="register_mobile_hint">Mobile No.</string>
+    <string name="login_password_hint">Password</string>
+    <string name="show_location_picker">Show Location Picker</string>
+    <string name="addressline1_hint">Enter Flat No / Floor / Landmark </string>
+    <string name="edittext_hint">"Click here to edit address location"</string>
+    <string name="googlemap_api_key">AIzaSyCMG7_ugpztuuHDXjGXETuWpU8xTnStvlc</string>
+</resources>

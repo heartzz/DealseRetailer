@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/parentactionscroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/relative_size_et"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/relativeLayoutbusiness"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="horizontal">
+
+
+
+                    <!-- &lt;!&ndash; Name Label &ndash;&gt;
+                     <android.support.design.widget.TextInputLayout
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:layout_alignParentTop="false"
+                         android:layout_weight="0.2"
+                         >
+                         <EditText android:id="@+id/countrycode"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_weight="0.2"
+                             android:inputType="textCapWords"
+                             android:textSize="18sp"
+                             android:hint="Country" />
+                     </android.support.design.widget.TextInputLayout>
+    -->
+
+                    <!-- Name Label -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="false"
+                        android:layout_weight="0.5"
+                        >
+                        <EditText android:id="@+id/tv_offerTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapWords"
+                            android:textSize="@dimen/et_fontsize"
+                            android:textColor="@color/black"
+                            android:hint="Offer Title *" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/relative_size_et"
+                android:layout_alignRight="@+id/relativeLayoutbusiness"
+                android:layout_alignEnd="@+id/relativeLayoutbusiness"
+                android:layout_below="@+id/relativeLayoutbusiness"
+                android:layout_alignLeft="@+id/relativeLayoutbusiness"
+                android:layout_alignStart="@+id/relativeLayoutbusiness"
+                android:id="@+id/relativeLayoutworking"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="horizontal">
+
+
+
+                    <!-- &lt;!&ndash; Name Label &ndash;&gt;
+                     <android.support.design.widget.TextInputLayout
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:layout_alignParentTop="false"
+                         android:layout_weight="0.2"
+                         >
+                         <EditText android:id="@+id/countrycode"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_weight="0.2"
+                             android:inputType="textCapWords"
+                             android:textSize="18sp"
+                             android:hint="Country" />
+                     </android.support.design.widget.TextInputLayout>
+    -->
+
+                    <!-- Name Label -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="false"
+                        android:layout_weight="0.5"
+                        >
+                        <EditText android:id="@+id/tv_shortDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapWords"
+                            android:textSize="@dimen/et_fontsize"
+                            android:textColor="@color/black"
+                            android:hint="Short Description *" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+
+
+
+            <!--  Email Label -->
+            <!--  <android.support.design.widget.TextInputLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="8dp"
+                 android:layout_marginBottom="8dp"></android.support.design.widget.TextInputLayout>
+
+            <RelativeLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="60dp"
+                 android:layout_alignRight="@+id/relativeLayout"
+                 android:layout_alignEnd="@+id/relativeLayout"
+                 android:layout_below="@+id/relativeLayout"
+                 android:layout_alignLeft="@+id/relativeLayout"
+                 android:layout_alignStart="@+id/relativeLayout"
+                 android:id="@+id/relativeLayoutemail"
+                 >
+
+
+                 &lt;!&ndash; Name Label &ndash;&gt;
+                 <android.support.design.widget.TextInputLayout
+                     android:layout_width="0dp"
+                     android:layout_height="wrap_content"
+                     android:layout_alignParentTop="false"
+                     android:layout_alignParentRight="true"
+                     android:layout_alignParentEnd="true"
+                     android:layout_alignParentLeft="true"
+                     android:layout_alignParentStart="true">
+
+
+                     <EditText android:id="@+id/input_email"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:inputType="textEmailAddress"
+                         android:hint="Email"
+                         android:layout_alignParentBottom="true"
+                         android:layout_centerHorizontal="true" />
+
+                 </android.support.design.widget.TextInputLayout>
+             </RelativeLayout>-->
+
+
+
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/relative_size_et"
+                android:layout_alignRight="@+id/relativeLayoutworking"
+                android:layout_alignEnd="@+id/relativeLayoutworking"
+                android:layout_below="@+id/relativeLayoutworking"
+                android:layout_alignLeft="@+id/relativeLayoutworking"
+                android:layout_alignStart="@+id/relativeLayoutworking"
+                android:id="@+id/relativeLayoutcountry"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="horizontal">
+
+
+
+                    <!-- &lt;!&ndash; Name Label &ndash;&gt;
+                     <android.support.design.widget.TextInputLayout
+                         android:layout_width="0dp"
+                         android:layout_height="wrap_content"
+                         android:layout_alignParentTop="false"
+                         android:layout_weight="0.2"
+                         >
+                         <EditText android:id="@+id/countrycode"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_weight="0.2"
+                             android:inputType="textCapWords"
+                             android:textSize="18sp"
+                             android:hint="Country" />
+                     </android.support.design.widget.TextInputLayout>
+    -->
+
+                    <!-- Name Label -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="false"
+                        android:layout_weight="0.5"
+                        >
+                        <EditText android:id="@+id/tv_longDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapWords"
+                            android:textSize="@dimen/et_fontsize"
+                            android:textColor="@color/black"
+                            android:hint="Long Description *" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+
+
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/relative_size_et"
+                android:layout_alignRight="@+id/relativeLayoutcountry"
+                android:layout_alignEnd="@+id/relativeLayoutcountry"
+                android:layout_below="@+id/relativeLayoutcountry"
+                android:layout_alignLeft="@+id/relativeLayoutcountry"
+                android:layout_alignStart="@+id/relativeLayoutcountry"
+                android:id="@+id/rl_validFrom"
+                >
+
+
+                <!-- Name Label -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+
+
+                    <EditText android:id="@+id/tv_validfrom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapWords"
+                        android:hint="Valid From *"
+                        android:textSize="@dimen/et_fontsize"
+                        android:textColor="@color/black"
+                        android:focusableInTouchMode="false"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/relative_size_et"
+                android:layout_below="@+id/rl_validFrom"
+                android:layout_alignLeft="@+id/rl_validFrom"
+                android:layout_alignStart="@+id/rl_validFrom"
+                android:layout_alignRight="@+id/rl_validFrom"
+                android:layout_alignEnd="@+id/rl_validFrom"
+                android:id="@+id/addresslbl"
+                >
+
+
+                <!-- Name Label -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+
+
+                    <EditText android:id="@+id/tv_validtill"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapWords"
+                        android:hint="Valid Till *"
+                        android:textSize="@dimen/et_fontsize"
+                        android:textColor="@color/black"
+                        android:focusableInTouchMode="false"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/dotted_view"
+                android:layout_width="wrap_content"
+                android:layout_marginRight="3dp"
+                android:layout_marginLeft="3dp"
+                android:layout_height="1dp"
+                android:visibility="invisible"
+                android:layout_alignLeft="@+id/addresslbl"
+                android:layout_alignRight="@+id/addresslbl"
+                android:background="#8D8D8D"
+                android:layout_below="@+id/addresslbl" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/relative_size_et"
+                android:layout_alignRight="@+id/addresslbl"
+                android:layout_alignEnd="@+id/addresslbl"
+                android:layout_below="@+id/dotted_view"
+                android:layout_alignLeft="@+id/addresslbl"
+                android:layout_alignStart="@+id/addresslbl"
+                android:id="@+id/relativeLayoutp"
+                >
+
+
+                <!-- Name Label -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+
+
+                    <EditText android:id="@+id/tv_terms"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textAutoCorrect"
+                        android:hint="Terms &amp; Conditions"
+                        android:textSize="@dimen/et_fontsize"
+                        android:textColor="@color/black"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

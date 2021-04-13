@@ -1,0 +1,33 @@
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="?attr/colorPrimary"
+    style="@style/MyToolbarStyle"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    app:titleTextColor="#FFFFFF"
+    app:layout_scrollFlags="scroll|enterAlways"
+    >
+
+    <ImageView
+        android:id="@+id/toolbar_back"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="-10dp"
+        android:src="@drawable/ic_keyboard_backspace_black_24dp" />
+
+    <TextView
+        android:id="@+id/toolbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="17sp" />
+
+
+</androidx.appcompat.widget.Toolbar>

@@ -1,0 +1,125 @@
+{
+  "project_info": {
+    "project_number": "908388512958",
+    "firebase_url": "https://dealsepartner.firebaseio.com",
+    "project_id": "dealsepartner",
+    "storage_bucket": "dealsepartner.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:908388512958:android:83c5b0113212d670",
+        "android_client_info": {
+          "package_name": "com.dealse.dealsepartner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "908388512958-8m3fj2pbe5222lt7eihomv08jkf6hif8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dealse.dealsepartner",
+            "certificate_hash": "84622a53e03d9d6951a1841d9fdd3c952419a98c"
+          }
+        },
+        {
+          "client_id": "908388512958-8t4pf5nmnar7u55beuop4oarpp3i91s8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dealse.dealsepartner",
+            "certificate_hash": "cc7d286d54b7f50ce1bda273d94c9da20ac34a2c"
+          }
+        },
+        {
+          "client_id": "908388512958-tf2e640hmt688ts79h9airaf58ti1aq3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dealse.dealsepartner",
+            "certificate_hash": "43f69c03fd74bb8cab73d80820ba06d398f5df9f"
+          }
+        },
+        {
+          "client_id": "908388512958-vcbmdk1mo2ed7sa628h0totbp345hjae.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dealse.dealsepartner",
+            "certificate_hash": "28b5ea718497b7145c157fc6d7ae402e73044806"
+          }
+        },
+        {
+          "client_id": "908388512958-vv8rcdv7ub85lrrpikl7su3idj34gjpt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dealse.dealsepartner",
+            "certificate_hash": "a0b8cde403932e0150d59fba9742bb4addb9d119"
+          }
+        },
+        {
+          "client_id": "908388512958-94sim1d6t8rvguvgq0fjhmsp06uc51fb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBf28UkDwUOYs_GjwR_leccV-9FYiNeXhA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "908388512958-94sim1d6t8rvguvgq0fjhmsp06uc51fb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:908388512958:android:706458e27b4096f4",
+        "android_client_info": {
+          "package_name": "com.harshank.dealse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "908388512958-0c7gk3gcrvtvube13dqafstfk1iobh0f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.harshank.dealse",
+            "certificate_hash": "84622a53e03d9d6951a1841d9fdd3c952419a98c"
+          }
+        },
+        {
+          "client_id": "908388512958-2unlb4ee79169nh0j2ufrbof323f06uh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.harshank.dealse",
+            "certificate_hash": "28b5ea718497b7145c157fc6d7ae402e73044806"
+          }
+        },
+        {
+          "client_id": "908388512958-94sim1d6t8rvguvgq0fjhmsp06uc51fb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBf28UkDwUOYs_GjwR_leccV-9FYiNeXhA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "908388512958-94sim1d6t8rvguvgq0fjhmsp06uc51fb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
