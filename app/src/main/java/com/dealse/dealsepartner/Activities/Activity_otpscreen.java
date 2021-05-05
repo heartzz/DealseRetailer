@@ -40,6 +40,8 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.gson.Gson;
 
+import org.w3c.dom.Text;
+
 import java.io.Serializable;
 import java.util.concurrent.TimeUnit;
 
@@ -64,6 +66,7 @@ public class Activity_otpscreen extends AppCompatActivity {
     FirebaseAuth mAuth;
     PhoneAuthCredential credential;
     String mVerificationId;
+    TextView resen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,6 +75,8 @@ public class Activity_otpscreen extends AppCompatActivity {
 
         Intent mainintent = getIntent();
         mobileNumber = mainintent.getStringExtra("mobile");
+
+        resen = (TextView)findViewById(R.id.resen);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -112,6 +117,16 @@ public class Activity_otpscreen extends AppCompatActivity {
             }
         });
 
+        resen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               // Toast.makeText(Activity_otpscreen.this,"New OTP Code Sent",Toast.LENGTH_SHORT).show();
+                requestOtp();
+                Snackbar.make(submit, "New OTP Code Sent", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+
 
         mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
@@ -137,6 +152,8 @@ public class Activity_otpscreen extends AppCompatActivity {
                 if (e instanceof FirebaseAuthInvalidCredentialsException) {
                     // Invalid request
                     // ...
+                    pinEntry.setText("");
+                    pd.dismiss();
                     Toast.makeText(Activity_otpscreen.this,"Invalid credentials entered",Toast.LENGTH_SHORT).show();
                 } else if (e instanceof FirebaseTooManyRequestsException) {
                     // The SMS quota for the project has been exceeded
@@ -199,11 +216,15 @@ public class Activity_otpscreen extends AppCompatActivity {
                             // ...
                         } else {
                             // Sign in failed, display a message and update the UI
+                            pinEntry.setText("");
+                            pd.dismiss();
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
                             Snackbar.make(submit, "Code is invalid please try again!", Snackbar.LENGTH_LONG)
                                     .setAction("Action", null).show();
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
                                 // The verification code entered was invalid
+                                pinEntry.setText("");
+                                pd.dismiss();
                                 Snackbar.make(submit, "Code is invalid please try again!", Snackbar.LENGTH_LONG)
                                         .setAction("Action", null).show();
                             }

@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         String email = input_mobile.getText().toString();
         if (email != null && !email.equalsIgnoreCase("") && email.length() == 10) {
             input_mobile.setError(null);
-            fab.setAlpha(0f);
+          //  fab.setAlpha(0f);
             signIn();
         } else {
             input_mobile.setError("Required.");
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent mainscreenIntent = new Intent(MainActivity.this, Activity_otpscreen.class);
         mainscreenIntent.putExtra("mobile", input_mobile.getText().toString());
-        mainscreenIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+       // mainscreenIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(mainscreenIntent);
     }
         //    LoaderDialog.showLoader(MainActivity.this);

@@ -57,6 +57,7 @@ public class UserReddemedHistory extends AppCompatActivity implements
     SearchView searchView;
     String oldString = "";
     GetUsedOfferList getOfferResponse;
+    TextView tv_noredeemedtxt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,6 +73,8 @@ public class UserReddemedHistory extends AppCompatActivity implements
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setNestedScrollingEnabled(false);
 
+        tv_noredeemedtxt = (TextView)findViewById(R.id.tv_noredeemedtxt);
+
         checkStoreMobieNumberExistResponse = new CheckStoreMobieNumberExistResponse();
 
         String storeDataString = DealseApplicationsManager.getInstance().getPref(UserReddemedHistory.this).getString("storeData","");
@@ -86,6 +89,7 @@ public class UserReddemedHistory extends AppCompatActivity implements
 
                 if(checkStoreMobieNumberExistResponse.getData().getLogoUrl() != null) {
 
+                    LoaderDialog.showLoader(UserReddemedHistory.this);
                     getRedeemedOfferList();
 
                 }
@@ -224,11 +228,16 @@ public class UserReddemedHistory extends AppCompatActivity implements
 
                             Log.d(TAG, "getRedeemedOfferList"+"Step3");
 
-
-                            redeemedListAdapter = new RedeemedListAdapter(UserReddemedHistory.this, getOfferResponse.getData());
-                            recyclerView.setAdapter(redeemedListAdapter);
-
+                            if(getOfferResponse.getData() != null){
+                                redeemedListAdapter = new RedeemedListAdapter(UserReddemedHistory.this, getOfferResponse.getData());
+                                recyclerView.setAdapter(redeemedListAdapter);
+                                tv_noredeemedtxt.setVisibility(View.GONE);
+                            }else {
+                                recyclerView.setVisibility(View.GONE);
+                                tv_noredeemedtxt.setVisibility(View.VISIBLE);
+                            }
                         }else if(getOfferResponse.getCode() == 404){
+                            tv_noredeemedtxt.setVisibility(View.VISIBLE);
                             recyclerView.setVisibility(View.GONE);
                         }
                     }catch (Exception e){

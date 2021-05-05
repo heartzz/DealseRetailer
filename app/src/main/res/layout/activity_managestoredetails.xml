@@ -109,7 +109,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="20dp"
@@ -154,7 +154,7 @@
                             android:layout_height="wrap_content"
                             android:inputType="textCapWords"
                             android:textSize="18dp"
-                            android:hint="Shop name" />
+                            android:hint="Shop name *" />
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
 
@@ -165,7 +165,8 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:layout_alignRight="@+id/relativeLayoutbusiness"
                 android:layout_alignEnd="@+id/relativeLayoutbusiness"
                 android:layout_below="@+id/relativeLayoutbusiness"
@@ -192,7 +193,7 @@
                             android:layout_height="wrap_content"
                             android:inputType="textCapWords"
                             android:textSize="18dp"
-                            android:hint="Owner First Name" />
+                            android:hint="Owner First Name *" />
                     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -208,7 +209,7 @@
                             android:layout_height="wrap_content"
                             android:inputType="textCapWords"
                             android:textSize="18dp"
-                            android:hint="Owner Last Name" />
+                            android:hint="Owner Last Name *" />
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
             </RelativeLayout>
@@ -262,7 +263,8 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:layout_alignRight="@+id/relativeLayout"
                 android:layout_alignEnd="@+id/relativeLayout"
                 android:layout_below="@+id/relativeLayout"
@@ -308,7 +310,7 @@
                             android:layout_height="wrap_content"
                             android:inputType="phone"
                             android:textSize="18dp"
-                            android:hint="Owner Mobile" />
+                            android:hint="Owner Mobile *" />
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
 
@@ -317,7 +319,8 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:layout_alignRight="@+id/relativeLayoutcountry"
                 android:layout_alignEnd="@+id/relativeLayoutcountry"
                 android:layout_below="@+id/relativeLayoutcountry"
@@ -363,7 +366,7 @@
                             android:layout_height="wrap_content"
                             android:inputType="textEmailAddress"
                             android:textSize="18dp"
-                            android:hint="Email" />
+                            android:hint="Email *" />
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
 
@@ -372,7 +375,8 @@
             <RelativeLayout
                 android:id="@+id/relativeLayoutetemail"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:layout_alignEnd="@+id/relativeLayoutEmail"
                 android:layout_alignLeft="@+id/relativeLayoutEmail"
                 android:layout_alignRight="@+id/relativeLayoutEmail"
@@ -397,6 +401,8 @@
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:maxLength="10"
+                            android:lines="1"
+                            android:imeOptions="actionDone"
                             android:hint="Store Contact No."
                             android:inputType="number" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -406,7 +412,8 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:layout_below="@+id/relativeLayoutetemail"
                 android:layout_alignLeft="@+id/relativeLayoutetemail"
                 android:layout_alignStart="@+id/relativeLayoutetemail"
@@ -433,9 +440,12 @@
                         android:id="@+id/addressrt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textCapWords"
-                        android:hint="Address"
+                        android:imeOptions="actionDone"
+                        android:hint="Address *"
                         android:textSize="18dp"
+                        android:textColor="@color/black"
+                        android:editable="false"
+                        android:clickable="true"
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true" />
 
@@ -446,6 +456,7 @@
                 android:id="@+id/tl_area"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_alignRight="@+id/addresslbl"
                 android:layout_alignEnd="@+id/addresslbl"
@@ -453,7 +464,7 @@
                 android:layout_alignLeft="@+id/addresslbl"
                 android:layout_alignStart="@+id/addresslbl"
                 android:textColorHint="@color/overlay_dark_40"
-                android:hint="Area">
+                android:hint="Area *">
 
                 <AutoCompleteTextView
                     android:id="@+id/av_areaselect"
@@ -471,6 +482,7 @@
                 android:id="@+id/tl_storetype"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_alignRight="@+id/tl_area"
                 android:layout_alignEnd="@+id/tl_area"
@@ -497,7 +509,8 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:layout_alignRight="@+id/tl_area"
                 android:layout_alignEnd="@+id/tl_area"
                 android:layout_below="@+id/tl_storetype"
@@ -534,7 +547,9 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:layout_alignRight="@+id/relativeLayoutp"
                 android:layout_alignEnd="@+id/relativeLayoutp"
                 android:layout_below="@+id/relativeLayoutp"

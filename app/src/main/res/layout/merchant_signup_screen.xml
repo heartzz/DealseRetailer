@@ -152,7 +152,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="textCapWords"
-                            android:hint="Shop name" />
+                            android:hint="Shop name *" />
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
 
@@ -189,7 +189,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="textCapWords"
-                            android:hint="Owner First Name" />
+                            android:hint="Owner First Name *" />
                     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -204,7 +204,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="textCapWords"
-                            android:hint="Owner Last Name" />
+                            android:hint="Owner Last Name *" />
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
             </RelativeLayout>
@@ -304,7 +304,7 @@
                             android:layout_height="wrap_content"
                             android:inputType="phone"
                             android:editable="false"
-                            android:hint="Owner Mobile" />
+                            android:hint="Owner Mobile *" />
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
 
@@ -358,7 +358,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="textEmailAddress"
-                            android:hint="Email" />
+                            android:hint="Email *" />
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
 
@@ -428,7 +428,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textCapWords"
-                        android:hint="Address"
+                        android:hint="Address *"
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true" />
 
@@ -439,13 +439,14 @@
                 android:id="@+id/tl_area"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_alignRight="@+id/addresslbl"
                 android:layout_alignEnd="@+id/addresslbl"
                 android:layout_below="@+id/addresslbl"
                 android:layout_alignLeft="@+id/addresslbl"
                 android:layout_alignStart="@+id/addresslbl"
-                android:hint="Area">
+                android:hint="Area *">
 
                 <AutoCompleteTextView
                     android:id="@+id/av_areaselect"
@@ -463,14 +464,14 @@
                 android:id="@+id/tl_storetype"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_alignRight="@+id/tl_area"
                 android:layout_alignEnd="@+id/tl_area"
                 android:layout_below="@+id/tl_area"
                 android:layout_alignLeft="@+id/tl_area"
                 android:layout_alignStart="@+id/tl_area"
-                android:hint="Store Type">
+                android:hint="Store Type *">
 
                 <AutoCompleteTextView
                     android:id="@+id/av_storetypeselect"

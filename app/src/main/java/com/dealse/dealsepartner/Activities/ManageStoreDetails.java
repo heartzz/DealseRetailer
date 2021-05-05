@@ -1,6 +1,7 @@
 package com.dealse.dealsepartner.Activities;
 
 import android.Manifest;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -13,8 +14,11 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -163,6 +167,44 @@ public class ManageStoreDetails extends AppCompatActivity implements LocationLis
         }
 
 
+        storecontactet.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if(editable.toString().length() == 10)
+                hideKeyboard(ManageStoreDetails.this);
+            }
+        });
+
+        addressrt.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                hideKeyboard(ManageStoreDetails.this);
+            }
+        });
+
+
+
+
         btnDone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -225,6 +267,17 @@ public class ManageStoreDetails extends AppCompatActivity implements LocationLis
             }
         });
 
+    }
+
+    public static void hideKeyboard(Activity activity) {
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        //Find the currently focused view, so we can grab the correct window token from it.
+        View view = activity.getCurrentFocus();
+        //If no view currently has focus, create a new one, just so we can grab a window token from it
+        if (view == null) {
+            view = new View(activity);
+        }
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
     private boolean checkPermission() {
@@ -375,14 +428,14 @@ public class ManageStoreDetails extends AppCompatActivity implements LocationLis
                     "addressline1"
                     "addressline2"
                      */
-                    cityet.setText(new StringBuilder().append("addressline2: ").append
-                            (completeAddress.getString("addressline2")).append("\ncity: ").append
+                    addressrt.setText(/*new StringBuilder().append("addressline2: ").append*/
+                            (completeAddress.getString("addressline2"))/*.append("\ncity: ").append
                             (completeAddress.getString("city")).append("\npostalcode: ").append
                             (completeAddress.getString("postalcode")).append("\nstate: ").append
-                            (completeAddress.getString("state")).toString());
+                            (completeAddress.getString("state")).toString()*/);
 
-                    countryet.setText(new StringBuilder().append("Lat:").append(currentLatitude).append
-                            ("  Long:").append(currentLongitude).toString());
+                /*    countryet.setText(new StringBuilder().append("Lat:").append(currentLatitude).append
+                            ("  Long:").append(currentLongitude).toString());*/
 
                 }
             } catch (Exception ex) {

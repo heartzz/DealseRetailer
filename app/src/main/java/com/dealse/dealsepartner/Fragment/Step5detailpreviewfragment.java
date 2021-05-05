@@ -44,7 +44,7 @@ public class Step5detailpreviewfragment extends Fragment {
     Stack<Fragment> fragmentStack;
     ViewPager mPager;
     AdapterImageSlider pagerAdapter;
-    TextView tv_offerName,tv_offerShortDescription,tv_offerValidtill,tv_offerTnc;
+    TextView tv_offerName,tv_offerShortDescription,tv_offerValidtill,tv_offerTnc,tv_ownerNumber;
     TextView tv_title,tv_brief,tv_distance;
     CheckStoreMobieNumberExistResponse checkStoreMobieNumberExistResponse;
 
@@ -66,6 +66,7 @@ public class Step5detailpreviewfragment extends Fragment {
         tv_offerShortDescription = (TextView)v.findViewById(R.id.tv_offerShortDescription);
         tv_offerValidtill = (TextView)v.findViewById(R.id.tv_offerValidtill);
         tv_offerTnc = (TextView)v.findViewById(R.id.tv_offerTnc);
+        tv_ownerNumber = (TextView)v.findViewById(R.id.tv_ownerNumber);
 
         tv_title = (TextView)v.findViewById(R.id.title);
         tv_brief = (TextView)v.findViewById(R.id.brief);
@@ -93,6 +94,7 @@ public class Step5detailpreviewfragment extends Fragment {
         tv_offerName.setText(CreateNewOfferStepper.offer.getName());
         tv_offerShortDescription.setText(CreateNewOfferStepper.offer.getSortDescription());
         tv_offerValidtill.setText(Constants.convertDate(CreateNewOfferStepper.offer.getEndDate()));
+        tv_ownerNumber.setText(checkStoreMobieNumberExistResponse.getData().getOwnerMobileNo());
         tv_offerTnc.setText(CreateNewOfferStepper.offer.getTermsAndConditions());
 
         return v;

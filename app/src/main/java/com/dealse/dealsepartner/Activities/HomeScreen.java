@@ -301,10 +301,16 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
             String result = data.getStringExtra("com.blikoon.qrcodescanner.got_qr_scan_relult");
             Log.d("MainActivity", "Have scan result in your app activity :" + result);
 
-            ScanOfferObject scanOfferObject = new ScanOfferObject();
-            scanOfferObject = new Gson().fromJson(result, ScanOfferObject.class);
+            try {
 
-            scanUserOffer(scanOfferObject);
+                ScanOfferObject scanOfferObject = new ScanOfferObject();
+                scanOfferObject = new Gson().fromJson(result, ScanOfferObject.class);
+                scanUserOffer(scanOfferObject);
+
+            }catch (Exception e){
+                e.printStackTrace();
+                Toast.makeText(HomeScreen.this,"This seems not offer QR",Toast.LENGTH_SHORT).show();
+            }
 
             /*AlertDialog alertDialog = new AlertDialog.Builder(HomeScreen.this).create();
             alertDialog.setTitle("Scan result");

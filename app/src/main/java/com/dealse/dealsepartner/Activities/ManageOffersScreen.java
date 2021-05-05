@@ -95,6 +95,7 @@ public class ManageOffersScreen extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        LoaderDialog.showLoader(ManageOffersScreen.this);
         getOffersList();
     }
 
@@ -130,8 +131,17 @@ public class ManageOffersScreen extends AppCompatActivity {
                             createddealsList = new ArrayList<>();
                             createddealsList = getOfferResponse.getData();
 
-                            offersListAdapter = new OffersListAdapter(ManageOffersScreen.this, createddealsList);
-                            recyclerView.setAdapter(offersListAdapter);
+                            try{
+                                if(createddealsList.size() > 0){
+                                    offersListAdapter = new OffersListAdapter(ManageOffersScreen.this, createddealsList);
+                                    recyclerView.setAdapter(offersListAdapter);
+                                }else {
+                                    recyclerView.setVisibility(View.GONE);
+                                    addimagetxt.setVisibility(View.VISIBLE);
+                                }
+                            }catch (Exception e){
+                                e.printStackTrace();
+                            }
 
                         }else if(getOfferResponse.getCode() == 404){
                             recyclerView.setVisibility(View.GONE);

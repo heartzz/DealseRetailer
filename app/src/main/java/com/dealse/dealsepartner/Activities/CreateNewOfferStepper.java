@@ -306,6 +306,8 @@ public class CreateNewOfferStepper extends AppCompatActivity {
 
     public void createOffer(){
 
+        LoaderDialog.showLoader(CreateNewOfferStepper.this);
+
         Call<CreateOfferResponse> call;
         if(offer.getOfferId() != 0){
 
@@ -370,6 +372,9 @@ public class CreateNewOfferStepper extends AppCompatActivity {
 
 
     public void uploadImage(final String OfferId, String fileUri, final int imgPosition){
+
+        LoaderDialog.showLoader(CreateNewOfferStepper.this);
+
         UploadImage service =
                 Dealsepartnerapplicationclass.retrofit.create(UploadImage.class);
 
@@ -394,7 +399,7 @@ public class CreateNewOfferStepper extends AppCompatActivity {
                 String code = checkStoreMobieNumberExistResponse.getCode();
                 String message = checkStoreMobieNumberExistResponse.getMessage();
 
-                // LoaderDialog.hideLoader();
+                LoaderDialog.hideLoader();
 
                 Log.d(TAG, "uploadImage"+"Step2");
 

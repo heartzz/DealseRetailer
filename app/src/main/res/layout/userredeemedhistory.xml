@@ -13,5 +13,14 @@
         android:layout_marginTop="10dp"
         android:descendantFocusability="beforeDescendants" />
 
-
+    <TextView
+        android:id="@+id/tv_noredeemedtxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="invisible"
+        android:text="No offers redeemed"
+        android:textSize="26sp"
+        android:gravity="center"/>
 </RelativeLayout>
