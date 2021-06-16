@@ -12,6 +12,6 @@ import retrofit2.http.POST;
 public interface CheckStoreMobieNumberExist {
 
     @Headers("Content-Type:application/json")
-    @POST("api/v1/Store/CheckStoreMobieNumberExist")
+    @POST("api/v1/Store/CheckStoreMobieNumberExistForStoreApp")
     Call<CheckStoreMobieNumberExistResponse> checkStoreMobileNumberExist(@Header("Authorization") String authtoken,@Body CheckStoreMobieNumberExistRequest checkStoreMobieNumberExistRequest);
 }

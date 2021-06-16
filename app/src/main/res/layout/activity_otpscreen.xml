@@ -80,15 +80,11 @@
                 android:gravity="center"
                 android:inputType="numberPassword"
                 android:maxLength="6"
+                android:visibility="visible"
                 android:textIsSelectable="false"
                 android:textSize="18sp"
                 android:imeOptions="actionDone"
-                app:pinAnimationType="fromBottom"
-                app:pinBackgroundIsSquare="true"
-                app:pinLineColors="@color/grey_1000"
-                app:pinLineStroke="0.5dp"
-                app:pinLineStrokeSelected="2dp"
-                app:pinTextBottomPadding="12dp" />
+                 />
 
             <TextView
                 android:id="@+id/resen"

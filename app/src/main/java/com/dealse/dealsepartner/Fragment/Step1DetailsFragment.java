@@ -118,7 +118,7 @@ public class Step1DetailsFragment extends Fragment {
 
         // now create the instance of the material date
         // picker
-        final MaterialDatePicker materialDatePicker1 = materialDateBuilder.build();
+        final MaterialDatePicker materialDatePicker1 = materialDateBuilder1.build();
 
         // handle select date button which opens the
         // material design date picker
@@ -150,6 +150,7 @@ public class Step1DetailsFragment extends Fragment {
                         Date currentDate = new Date();
                         if(Constants.isValidDate(df.format(currentDate),Constants.convertDateToSend(selection.toString()))){
                             tv_validfrom.setText(Constants.convertDateToSend(selection.toString()));
+                            tv_validtill.setText("");
                         }else {
                             Toast.makeText(getActivity(),"Please select new dates.",Toast.LENGTH_SHORT).show();
                         }
@@ -187,10 +188,15 @@ public class Step1DetailsFragment extends Fragment {
                         // if the user clicks on the positive
                         // button that is ok button update the
                         // selected date
-                        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+                        DateFormat df = new SimpleDateFormat("dd MMM yyyy");
                         Date currentDate = new Date();
                         if(Constants.isValidDate(df.format(currentDate),Constants.convertDateToSend(selection.toString()))){
-                            tv_validtill.setText(Constants.convertDateToSend(selection.toString()));
+                            if(Constants.isValidDateFromSelected(Constants.convertDateToSend(selection.toString()),tv_validfrom.getText().toString())){
+                                tv_validtill.setText(Constants.convertDateToSend(selection.toString()));
+                            }else {
+                                Toast.makeText(getActivity(),"Please select date after from date.",Toast.LENGTH_SHORT).show();
+                            }
+
                         }else {
                             Toast.makeText(getActivity(),"Please select new dates.",Toast.LENGTH_SHORT).show();
                         }

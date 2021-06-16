@@ -13,14 +13,14 @@ import retrofit2.http.Part;
 public interface UpdateStore {
 
     @Multipart
-    @POST("api/v1/Store/UpdateStore")
+    @POST("api/v1/Store/UpdateStoreForStoreApp")
     Call<CheckStoreMobieNumberExistResponse> updateStore(@Header("Authorization") String authtoken,
                                                       @Part("StoreId") Integer StoreId,
                                                       @Part("AreaId") Integer AreaId,
                                                       @Part("StoreTypeId") Integer StoreTypeId,
                                                       @Part("Name") RequestBody Name,
                                                       @Part("Email") RequestBody Email,
-                                                      @Part("Address1") RequestBody Address1,
+                                                      @Part("Address") RequestBody Address1,
                                                       @Part("Latitude") double Latitude,
                                                       @Part("Longitude") double Longitude,
                                                       @Part("OwnerName") RequestBody OwnerName,
@@ -28,6 +28,7 @@ public interface UpdateStore {
                                                          @Part("MobileNo1") RequestBody MobileNo1,
                                                          @Part("AddedDate") RequestBody AddedDate,
                                                          @Part("OldLogo") RequestBody OldLogo,
+                                                         @Part("DeviceID") RequestBody DeviceID,
                                                       @Part MultipartBody.Part Logo
     );
 }

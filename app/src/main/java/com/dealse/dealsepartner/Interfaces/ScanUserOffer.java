@@ -13,6 +13,6 @@ import retrofit2.http.POST;
 
 public interface ScanUserOffer {
     @Headers("Content-Type:application/json")
-    @POST("api/v1/Store/ScanUserOffer")
+    @POST("api/v1/Store/ScanUserOfferForStoreApp")
     Call<ScanOfferResponse> scanUserOffer(@Header("Authorization") String authtoken, @Body ScanOfferObject scanOfferObject);
 }

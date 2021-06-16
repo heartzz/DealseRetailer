@@ -12,7 +12,7 @@ import retrofit2.http.Part;
 
 public interface UploadImage {
     @Multipart
-    @POST("api/v1/OfferBanner/AddOfferImage")
+    @POST("api/v1/OfferBanner/AddOfferImageForStoreApp")
     Call<CheckStoreMobieNumberExistResponse> addImage(@Header("Authorization") String authtoken,
                                                       @Part("OfferId") RequestBody OfferId,
                                                       @Part MultipartBody.Part OfferImage

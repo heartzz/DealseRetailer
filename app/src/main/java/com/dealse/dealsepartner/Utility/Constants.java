@@ -77,4 +77,19 @@ public class Constants {
 
         return true;
     }
+
+    public static boolean isValidDateFromSelected(String date,String fromdate) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy");
+        try {
+            Date date1 = sdf.parse(date);
+            Date date2 = sdf.parse(fromdate);
+            int result = date1.compareTo(date2);
+            return (result <= 0 ?  false : true);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
+        return true;
+    }
 }

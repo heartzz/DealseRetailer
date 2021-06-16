@@ -62,6 +62,9 @@ import com.dealse.dealsepartner.R;
 import com.dealse.dealsepartner.Utility.Constants;
 import com.dealse.dealsepartner.Utility.GpsTracker;
 import com.dealse.dealsepartner.Utility.LoaderDialog;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
@@ -142,6 +145,8 @@ public class Merchant_signup extends AppCompatActivity implements LocationListen
 
     private static final int PERMISSION_REQUEST_CODE = 200;
 
+    String token;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -173,7 +178,24 @@ public class Merchant_signup extends AppCompatActivity implements LocationListen
             phoneet.setText(DealseApplicationsManager.getInstance().getPref(Merchant_signup.this).getString("mobileNumber", ""));
         }
 
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(new OnCompleteListener<String>() {
+                    @Override
+                    public void onComplete(@NonNull Task<String> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w(TAG, "Fetching FCM registration token failed", task.getException());
+                            return;
+                        }
 
+                        // Get new FCM registration token
+                         token = task.getResult();
+
+                        // Log and toast
+                       // String msg = getString(R.string.msg_token_fmt, token);
+                        Log.d(TAG + "Firebase Token", token);
+                    //    Toast.makeText(Merchant_signup.this, token, Toast.LENGTH_SHORT).show();
+                    }
+                });
 
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
@@ -199,8 +221,9 @@ public class Merchant_signup extends AppCompatActivity implements LocationListen
                     store.setName(businessetString);
                     store.setOwnerName(firstnameetString + " " + lastnameetString);
                     store.setOwnerMobileNo(phoneetString);
+                  //  store.setMobileNo2(token);
                     store.setEmail(emailetString);
-                    store.setAddress1(addressrtString + " " + cityetSting + " " + countryetSting);
+                    store.setAddress(addressrtString + " " + cityetSting + " " + countryetSting);
                     store.setMobileNo1(storecontactetString);
 
                     store.setAreaId(getAreaIdFromName(av_areaselect.getText().toString()));
@@ -630,17 +653,18 @@ public class Merchant_signup extends AppCompatActivity implements LocationListen
 
         RequestBody Name = createPartFromString(store.getName());
         RequestBody Email = createPartFromString(store.getEmail());
-        RequestBody Address1 = createPartFromString(store.getAddress1());
+        RequestBody Address = createPartFromString(store.getAddress());
         RequestBody OwnerName = createPartFromString(store.getOwnerName());
         RequestBody OwnerMobileNo = createPartFromString(store.getOwnerMobileNo());
         RequestBody Mobile1 = createPartFromString(store.getMobileNo1());
+        RequestBody FirebaseToken = createPartFromString(token);
     //    RequestBody AddedDate = createPartFromString(store.getAddedDate());
 
         Log.d(TAG, "addStore"+"Step1");
 
 
         call = service.addStore(DealseApplicationsManager.getInstance().getPref(Merchant_signup.this).getString(Constants.KEY_TOKEN,"")
-                , store.getAreaId(),store.getStoreTypeId(),Name,Email,Address1,store.getLatitude(),store.getLongitude(),OwnerName,OwnerMobileNo,Mobile1,body1);
+                , store.getAreaId(),store.getStoreTypeId(),Name,Email,Address,store.getLatitude(),store.getLongitude(),OwnerName,OwnerMobileNo,Mobile1,FirebaseToken,body1);
 
         call.enqueue(new Callback<CheckStoreMobieNumberExistResponse>() {
             @Override

@@ -7,8 +7,8 @@ import android.text.TextUtils;
  */
 public class UrlConstants {
    // public static String BASE_URL = "http://dealse.mepass.in/";
-      public static String BASE_URL = "http://vayotsavfoundation.org/";
-   // public static String BASE_URL = "http://192.168.2.103:45457/";
+    public static String BASE_URL = "http://vayotsavfoundation.org/";
+   // public static String BASE_URL = "http://192.168.2.108:45461/";
 
     public static boolean isEmpty(CharSequence str) {
         return TextUtils.isEmpty(str) || str.toString().equals("null");

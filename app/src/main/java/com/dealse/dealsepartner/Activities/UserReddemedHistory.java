@@ -228,7 +228,7 @@ public class UserReddemedHistory extends AppCompatActivity implements
 
                             Log.d(TAG, "getRedeemedOfferList"+"Step3");
 
-                            if(getOfferResponse.getData() != null){
+                            if(getOfferResponse.getData().size() > 0){
                                 redeemedListAdapter = new RedeemedListAdapter(UserReddemedHistory.this, getOfferResponse.getData());
                                 recyclerView.setAdapter(redeemedListAdapter);
                                 tv_noredeemedtxt.setVisibility(View.GONE);

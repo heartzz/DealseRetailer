@@ -11,6 +11,6 @@ import retrofit2.http.POST;
 
 public interface UpdateOffer {
     @Headers("Content-Type:application/json")
-    @POST("api/v1/Offer/UpdateOffer")
+    @POST("api/v1/Offer/UpdateOfferForStoreApp")
     Call<CreateOfferResponse> updateOffer(@Header("Authorization") String authtoken, @Body Offer offer);
 }

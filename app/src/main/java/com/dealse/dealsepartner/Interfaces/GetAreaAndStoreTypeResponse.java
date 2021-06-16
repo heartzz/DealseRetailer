@@ -13,7 +13,7 @@ import retrofit2.http.POST;
 public interface GetAreaAndStoreTypeResponse {
 
     @Headers("Content-Type:application/json")
-    @POST("api/v1/HomeScreen/GetAreaAndStoreTypeList")
+    @POST("api/v1/HomeScreen/GetAreaAndStoreTypeListForStoreApp")
     Call<GetAreaAndStoreTypeList> getAreaAndStoreTypeList(@Header("Authorization") String authtoken);
 
 }

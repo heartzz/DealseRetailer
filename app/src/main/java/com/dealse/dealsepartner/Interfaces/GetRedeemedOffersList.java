@@ -13,6 +13,6 @@ import retrofit2.http.POST;
 public interface GetRedeemedOffersList {
 
     @Headers("Content-Type:application/json")
-    @POST("api/v1/HomeScreen/GetUserUsedOfferListByStore")
+    @POST("api/v1/HomeScreen/GetUserUsedOfferListByStoreForStoreApp")
     Call<GetUsedOfferList> getRedeemedOffersList(@Header("Authorization") String authtoken, @Body GetOfferRequest getOfferRequest);
 }

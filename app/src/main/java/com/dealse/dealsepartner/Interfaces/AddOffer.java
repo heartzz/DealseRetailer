@@ -13,6 +13,6 @@ import retrofit2.http.POST;
 
 public interface AddOffer {
     @Headers("Content-Type:application/json")
-    @POST("api/v1/Offer/AddOffer")
+    @POST("api/v1/Offer/AddOfferForStoreApp")
     Call<CreateOfferResponse> createOffer(@Header("Authorization") String authtoken, @Body Offer offer);
 }

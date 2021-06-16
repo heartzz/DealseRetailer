@@ -19,18 +19,19 @@ public interface AddStore {
 
 
     @Multipart
-    @POST("api/v1/Store/AddStore")
+    @POST("api/v1/Store/AddStoreForStoreApp")
     Call<CheckStoreMobieNumberExistResponse> addStore(@Header("Authorization") String authtoken,
                                                       @Part("AreaId") Integer AreaId,
                                                       @Part("StoreTypeId") Integer StoreTypeId,
                                                       @Part("Name") RequestBody Name,
                                                       @Part("Email") RequestBody Email,
-                                                      @Part("Address1") RequestBody Address1,
+                                                      @Part("Address") RequestBody Address1,
                                                       @Part("Latitude") double Latitude,
                                                       @Part("Longitude") double Longitude,
                                                       @Part("OwnerName") RequestBody OwnerName,
                                                       @Part("OwnerMobileNo") RequestBody OwnerMobileNo,
                                                       @Part("MobileNo1") RequestBody MobileNo1,
+                                                      @Part("DeviceID") RequestBody DeviceID,
                                                       @Part MultipartBody.Part Logo
     );
 }

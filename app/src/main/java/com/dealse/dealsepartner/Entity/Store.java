@@ -6,13 +6,39 @@ public class Store {
     private int StoreTypeId;
     private String Name;
     private String Email;
-    private String Address1;
+    private String Address;
     private double Latitude;
     private double Longitude;
     private String OwnerName;
     private String OwnerMobileNo;
     private String MobileNo1;
+    private String MobileNo2;
     private String OldLogo;
+    private String DeviceID;
+
+    public String getAddress() {
+        return Address;
+    }
+
+    public void setAddress(String address) {
+        Address = address;
+    }
+
+    public String getDeviceID() {
+        return DeviceID;
+    }
+
+    public void setDeviceID(String deviceID) {
+        DeviceID = deviceID;
+    }
+
+    public String getMobileNo2() {
+        return MobileNo2;
+    }
+
+    public void setMobileNo2(String mobileNo2) {
+        MobileNo2 = mobileNo2;
+    }
 
     public String getOldLogo() {
         return OldLogo;
@@ -70,14 +96,6 @@ public class Store {
 
     public void setEmail(String email) {
         Email = email;
-    }
-
-    public String getAddress1() {
-        return Address1;
-    }
-
-    public void setAddress1(String address1) {
-        Address1 = address1;
     }
 
     public double getLatitude() {

@@ -83,6 +83,7 @@ public class Activity_otpscreen extends AppCompatActivity {
 
         submit = (Button)findViewById(R.id.submit);
         pinEntry = (PinEntryEditText)findViewById(R.id.txt_pin_entry);
+        //pinEntry.setVisibility(View.VISIBLE);
         text1 = (TextView)findViewById(R.id.text1);
         text1.setText(mobileNumber);
         if (pinEntry != null) {

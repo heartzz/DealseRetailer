@@ -84,7 +84,7 @@ public class Step5detailpreviewfragment extends Fragment {
             if(checkStoreMobieNumberExistResponse != null) {
 
                 tv_title.setText(checkStoreMobieNumberExistResponse.getData().getName());
-                tv_brief.setText(checkStoreMobieNumberExistResponse.getData().getAddress1());
+                tv_brief.setText(checkStoreMobieNumberExistResponse.getData().getAddress());
 
             }else {
                 checkStoreMobieNumberExistResponse = new CheckStoreMobieNumberExistResponse();

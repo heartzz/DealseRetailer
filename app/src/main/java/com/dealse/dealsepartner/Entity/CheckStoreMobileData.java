@@ -21,13 +21,30 @@ public class CheckStoreMobileData implements Serializable {
     private String name;
     private String email;
     private String mobileNo1;
-    private String address1;
+    private String address;
     private String latitude;
     private String longitude;
     private String ownerName;
     private String ownerMobileNo;
     private String about;
     private String addedDate;
+    private String deviceID;
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getDeviceID() {
+        return deviceID;
+    }
+
+    public void setDeviceID(String deviceID) {
+        this.deviceID = deviceID;
+    }
 
     public String getAddedDate() {
         return addedDate;
@@ -91,14 +108,6 @@ public class CheckStoreMobileData implements Serializable {
 
     public void setMobileNo1(String mobileNo1) {
         this.mobileNo1 = mobileNo1;
-    }
-
-    public String getAddress1() {
-        return address1;
-    }
-
-    public void setAddress1(String address1) {
-        this.address1 = address1;
     }
 
     public String getLatitude() {

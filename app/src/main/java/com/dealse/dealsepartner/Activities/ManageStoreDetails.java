@@ -148,7 +148,7 @@ public class ManageStoreDetails extends AppCompatActivity implements LocationLis
                 phoneet.setText(checkStoreMobieNumberExistResponse.getData().getOwnerMobileNo());
                 emailet.setText(checkStoreMobieNumberExistResponse.getData().getEmail());
                 storecontactet.setText(checkStoreMobieNumberExistResponse.getData().getMobileNo1());
-                addressrt.setText(checkStoreMobieNumberExistResponse.getData().getAddress1());
+                addressrt.setText(checkStoreMobieNumberExistResponse.getData().getAddress());
                 av_areaselect.setText(getSelectedArea(checkStoreMobieNumberExistResponse.getData().getAreaId()));
                 av_storetypeselect.setText(getSelectedType(checkStoreMobieNumberExistResponse.getData().getStoreTypeId()));
 
@@ -220,6 +220,7 @@ public class ManageStoreDetails extends AppCompatActivity implements LocationLis
                 countryetSting = countryet.getText().toString();
 
                 if (!businessetString.equalsIgnoreCase("") && !firstnameetString.equalsIgnoreCase("") && !lastnameetString.equalsIgnoreCase("")
+                        && !emailetString.equalsIgnoreCase("")
                         && !phoneetString.equalsIgnoreCase("")
                         && !addressrtString.equalsIgnoreCase("")
                 ) {
@@ -230,11 +231,12 @@ public class ManageStoreDetails extends AppCompatActivity implements LocationLis
                     store.setOwnerMobileNo(phoneetString);
                     store.setEmail(emailetString);
                     store.setOldLogo(checkStoreMobieNumberExistResponse.getData().getOldLogo());
-                    store.setAddress1(addressrtString + " " + cityetSting + " " + countryetSting);
+                    store.setAddress(addressrtString + " " + cityetSting + " " + countryetSting);
                     store.setAreaId(getAreaIdFromName(av_areaselect.getText().toString()));
                     store.setMobileNo1(storecontactetString);
                     store.setStoreTypeId(getTypeIdFromName(av_storetypeselect.getText().toString()));
                     store.setAddedDate(checkStoreMobieNumberExistResponse.getData().getAddedDate());
+                    store.setDeviceID(checkStoreMobieNumberExistResponse.getData().getDeviceID());
                     //     partnerDetails.setStoreLatitude();
                     //     partnerDetails.setStoreLongitude();
                     LoaderDialog.showLoader(ManageStoreDetails.this);
@@ -244,7 +246,7 @@ public class ManageStoreDetails extends AppCompatActivity implements LocationLis
                     startActivity(mainintent);*/
 
                 } else {
-                    Toast.makeText(ManageStoreDetails.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ManageStoreDetails.this, "Please enter all the required fields", Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -374,7 +376,7 @@ public class ManageStoreDetails extends AppCompatActivity implements LocationLis
     public void startPicker(){
         Intent intent = new Intent(ManageStoreDetails.this, AlbumSelectActivity.class);
         //set limit on number of images that can be selected, default is 10
-        intent.putExtra(com.darsh.multipleimageselect.helpers.Constants.INTENT_EXTRA_LIMIT, 10);
+        intent.putExtra(com.darsh.multipleimageselect.helpers.Constants.INTENT_EXTRA_LIMIT, 1);
         startActivityForResult(intent, com.darsh.multipleimageselect.helpers.Constants.REQUEST_CODE);
     }
 
@@ -616,11 +618,12 @@ public class ManageStoreDetails extends AppCompatActivity implements LocationLis
 
         RequestBody Name = createPartFromString(store.getName());
         RequestBody Email = createPartFromString(store.getEmail());
-        RequestBody Address1 = createPartFromString(store.getAddress1());
+        RequestBody Address = createPartFromString(store.getAddress());
         RequestBody OwnerName = createPartFromString(store.getOwnerName());
         RequestBody OwnerMobileNo = createPartFromString(store.getOwnerMobileNo());
         RequestBody Mobile1 = createPartFromString(store.getMobileNo1());
         RequestBody AddedDate = createPartFromString(store.getAddedDate());
+        RequestBody DeviceID = createPartFromString(store.getDeviceID());
         RequestBody OldLogo;
         if(store.getOldLogo() != null) {
             OldLogo = createPartFromString(store.getOldLogo());
@@ -633,7 +636,7 @@ public class ManageStoreDetails extends AppCompatActivity implements LocationLis
 
 
         call = service.updateStore(DealseApplicationsManager.getInstance().getPref(ManageStoreDetails.this).getString(Constants.KEY_TOKEN,"")
-                ,checkStoreMobieNumberExistResponse.getData().getStoreId(), store.getAreaId(),store.getStoreTypeId(),Name,Email,Address1,store.getLatitude(),store.getLongitude(),OwnerName,OwnerMobileNo,Mobile1,AddedDate,OldLogo,body1);
+                ,checkStoreMobieNumberExistResponse.getData().getStoreId(), store.getAreaId(),store.getStoreTypeId(),Name,Email,Address,store.getLatitude(),store.getLongitude(),OwnerName,OwnerMobileNo,Mobile1,AddedDate,OldLogo,DeviceID,body1);
 
         call.enqueue(new Callback<CheckStoreMobieNumberExistResponse>() {
             @Override
